@@ -10,4 +10,14 @@ body{
  #resize {
     display: inline-block;
     display: inline;
+    justify-self: center;
  }
+p{
+    font-size: 20px;
+
+}
+
+h2{
+   text-align: center;
+}
+ 
