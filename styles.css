@@ -1,7 +1,10 @@
-img1{
-    border-radius: 50px;
-}
-
 body{
     background-color: gray;
 }
+
+.img1{
+  width: 20px;
+  height: 20px;
+
+}
+
