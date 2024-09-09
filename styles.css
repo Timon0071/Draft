@@ -14,10 +14,16 @@ body{
     display: inline;
     justify-self: center;
  }
-p{
-    font-size: 20px;
+ p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+        text-align: center;
+    }
 
-}
 
 h2{
    text-align: center;
@@ -29,7 +35,7 @@ h2{
         padding: 0;
         align-items: center;
         margin: 0;
-        margin-left: auto;
+        margin-left: 60%;
     }
     .navigation{
         margin: 10px;
@@ -53,4 +59,8 @@ h2{
 footer{
     text-align: center;
     margin-top: 50px;
+}
+
+section{
+    display: block;
 }
