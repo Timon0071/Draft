@@ -1,30 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let startTime = localStorage.getItem('startTime');
+    let savedElapsedTime = localStorage.getItem('elapsedTime');
 
     // If no startTime exists, set the current time as the start time
-    if (!startTime) {
-        startTime = Date.now();
-        localStorage.setItem('startTime', startTime);
+    if (!savedElapsedTime) {
+        savedElapsedTime = 0; 
+    } else {
+        savedElapsedTime = parseInt(savedElapsedTime, 10);
     }
 
-    const timeElement = document.getElementById('number');
-
-    if (!timeElement) {
-        console.error('Element not found');
+    const timeElement = document.getElementById('number'); 
+    if(!timeElement) {
+        console.error('Element with id "number" not found.');
         return;
     }
+    
+    let startTime = Date.now();
 
     setInterval(function() {
-        // Calculate the number of seconds since the start time
-        const currentTime = Date.now();
-        const seconds = Math.floor((currentTime - startTime) / 1000);
+        const currentTime = Date.now(); 
+        const elapsedTime = Math.floor((currentTime - startTime) / 1000) + savedElapsedTime; 
+        localStorage.setItem('elapsedTime', elapsedTime); // Corrected the stored variable
+        
+        const seconds = Math.floor(elapsedTime % 60);
+        const minutes = Math.floor((elapsedTime / 60) % 60);
+        const hours = Math.floor((elapsedTime / 3600) % 24);
+        const days = Math.floor((elapsedTime / (24 * 3600)) % 7);
+        const weeks = Math.floor(elapsedTime / (7 * 24 * 3600));
+        const years = Math.floor(elapsedTime / (365.25 * 24 * 3600));
 
-        // Update the textContent of the timeElement
-        timeElement.textContent = `Fun Fact! I have been coding for ${seconds} seconds.`;
+        timeElement.textContent = `Fun Fact! I have been coding for: ${years} years, ${weeks % 52} weeks, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds. `
 
-        // Log the update
-        console.log(`Updated text content to ${seconds} seconds`);
-    }, 1000);  // 1000 milliseconds equals 1 second
+    }, 1000);
 });
-
-
