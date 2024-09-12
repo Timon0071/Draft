@@ -2,6 +2,11 @@ body{
     background-color: #dcdad7;
 }
 
+.newColor {
+    background-color: rgba(21, 62, 132, 0.443); /* Add the color you want */
+}
+
+
 .img1{
   width: 150px;
   height: 150px;
@@ -9,11 +14,14 @@ body{
   margin-left: 20px;
 }
 
- #resize {
-    display: inline-block;
-    display: inline;
-    justify-self: center;
+ .resize {
+    display: inline-flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+ align-content: space-between;
+  background-color: lightgray;
  }
+
  p {
         display: block;
         margin-block-start: 1em;
@@ -27,6 +35,7 @@ body{
 
 h2{
    text-align: center;
+   margin-top: 300px;
 }
 
 .navigations{
@@ -64,3 +73,4 @@ footer{
 section{
     display: block;
 }
+
