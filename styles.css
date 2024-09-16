@@ -1,5 +1,7 @@
 body{
     background-color: #dcdad7;
+    white-space: initial;
+
 }
 
 .newColor {
@@ -34,6 +36,7 @@ body{
         line-height: 1;
         font-family: monospace;
         font-size: x-large;
+        margin-left: 500px;
     }
 
 
@@ -90,4 +93,18 @@ img{
    height: 300px;
    text-align: center;
    opacity: 1;
+}
+
+@media only screen and (max-width:480px) {
+  .img1  {
+        display: inline-block;
+        justify-content: center;
+    }
+}
+
+.projectpic{
+    display: inline;
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
 }
