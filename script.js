@@ -40,7 +40,7 @@ colorChangeBtn.addEventListener('click', () => {
 });
 
 function getRandomColor() {
-  const colors = ['#2848B2'];
+  const colors = ['#87cefa'];
   return colors[Math.floor(Math.random() * colors.length)];
 };
 
