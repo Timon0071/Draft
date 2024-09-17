@@ -16,13 +16,48 @@ body{
   margin-left: 20px;
 }
 
+.slide{
+    background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	height: 100px;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: 960px;
+	
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+}
+
  .resize {
-    display: inline-flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
- align-content: space-between;
-  background-color: lightgray;
- }
+    height: 100px;
+    width: 250px;
+}
+
+.box{
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+
 
  p {
         display: block;
@@ -36,7 +71,6 @@ body{
         line-height: 1;
         font-family: monospace;
         font-size: x-large;
-        margin-left: 500px;
     }
 
 
@@ -70,6 +104,7 @@ h2{
   display: inline;
   justify-content: space-between;
   margin-left: 250px;
+  animation: moveSlideShow 20s linear infinite;
  }
 .colorcontact{
     color: black;
@@ -107,4 +142,14 @@ img{
     margin-left: 100px;
     width: 500px;
     height: 500px;
+}
+
+.gif{
+float: right;
+
+}
+
+.about{
+    margin-right: 500px;
+    
 }
