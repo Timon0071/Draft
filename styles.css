@@ -1,155 +1,170 @@
-body{
+bbody {
     background-color: #dcdad7;
     white-space: initial;
-
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
+
+$newColor: #87cefa;
+$animationSpeed: 20s;
 
 .newColor {
-    background-color: #87cefa; /* Add the color you want */
+    background-color: $newColor;
 }
 
-
-.img1{
-  width: 150px;
-  height: 150px;
-  margin-right: 20px;
-  margin-left: 20px;
+.img1 {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
-.slide{
+:root {
+    --no-of-slides: 6;
+    --slides-in-view: 4;
+    --slide-width: 200px;
+    --slide-height: 300px;
+    --iteration-time: 10s;
+  }
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(var(--slide-width) * var(--no-of-slides)* -1));
+      }
+  }
+  
+  .slider {
     background: white;
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 100px;
-	margin: auto;
-	overflow:hidden;
-	position: relative;
-	width: 960px;
-	
-	&::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 100px;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
-	
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
-
-	&::before {
-		left: 0;
-		top: 0;
-	}
-}
-
- .resize {
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
     height: 100px;
-    width: 250px;
-}
-
-.box{
-    animation: scroll $animationSpeed linear infinite;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+  }
+  
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .slider .slide-track {
+    animation: scroll 20s linear infinite;
     display: flex;
     width: calc(250px * 14);
+  }
+  
+  .slider .slide {
+    height: 100px;
+    width: 250px;
+  }
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+    font-family: monospace;
+    font-size: x-large;
 }
 
-
- p {
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        unicode-bidi: isolate;
-        text-align: center;
-        font-weight: bold;
-        line-height: 1;
-        font-family: monospace;
-        font-size: x-large;
-    }
-
-
-h2{
-   text-align: center;
-   margin-top: 200px;
+h2 {
+    text-align: center;
+    margin-top: 200px;
 }
 
-.navigations{
-        display: flex;
-        list-style-type: none;
-        padding: 0;
-        align-items: center;
-        margin: 0;
-        margin-left: 60%;
-    }
-    .navigation{
-        margin: 10px;
-        
-    }
+.navigations {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    align-items: center;
+    margin: 0;
+    margin-left: 60%;
+}
 
-    .img2{
-        width: 200px;
-        height: 150px;
-    }
- .img3{
+.navigation {
+    margin: 10px;
+}
+
+.img2 {
+    width: 200px;
+    height: 150px;
+}
+
+.img3 {
     width: 250px;
     height: 150px;
     margin-right: 30px;
     margin-left: auto;
-  display: inline;
-  justify-content: space-between;
-  margin-left: 250px;
-  animation: moveSlideShow 20s linear infinite;
- }
-.colorcontact{
-    color: black;
+    display: inline;
+    justify-content: space-between;
+    margin-left: 250px;
+    animation: moveSlideShow 20s linear infinite;
 }
 
-footer{
+footer {
     text-align: center;
     margin-top: 50px;
 }
 
-section{
+section {
     display: block;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-img{
-   width: 300px;
-   height: 300px;
-   text-align: center;
-   opacity: 1;
+img {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    opacity: 1;
 }
 
-@media only screen and (max-width:480px) {
-  .img1  {
-        display: inline-block;
-        justify-content: center;
-    }
-}
-
-.projectpic{
+.projectpic {
     display: inline;
     margin-left: 100px;
     width: 500px;
     height: 500px;
 }
 
-.gif{
-float: right;
-
+.gif {
+    float: right; /* consider removing this in favor of flex */
 }
 
-.about{
+.about {
     margin-right: 500px;
-    
+}
+
+@media only screen and (max-width: 480px) {
+    .img1 {
+        display: inline-block;
+        justify-content: center;
+    }
 }
