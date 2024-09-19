@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
 });
 
-const colorChangeBtn = document.getElementById('colorChangeBtn');
+const colorChangeBtn = document.getElementById('myButton');
 
 colorChangeBtn.addEventListener('click', () => {
   document.body.style.backgroundColor = getRandomColor();
@@ -44,16 +44,11 @@ function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 };
 
-
-
-
-
-const colorChange1 = document.getElementById('colorChange1'); 
+const colorChange1 = document.getElementsByClassName('originalcolor')[0]; 
 colorChange1.addEventListener('click', () => {
     document.body.style.backgroundColor = originalColor();
 }); 
 function originalColor() {
-    const colors = ['#dcdad7']
-return colors[Math.floor(Math.random() *  colors.length)];
-
-}
+    const colors = ['#bcbcc1']
+    return colors[Math.floor(Math.random() * colors.length)];
+};

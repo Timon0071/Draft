@@ -1,10 +1,15 @@
 bbody {
-    background-color: #dcdad7;
+    background-color: rgb(116, 107, 173);
     white-space: initial;
     display: flex;
     justify-content: center;
     overflow: hidden;
 }
+
+body{
+    background-color: #bcbcc1;
+}
+
 
 $newColor: #87cefa;
 $animationSpeed: 20s;
@@ -140,7 +145,7 @@ h1 {
     text-align: center;
 }
 
-img {
+.gif {
     width: 300px;
     height: 300px;
     text-align: center;
@@ -148,10 +153,9 @@ img {
 }
 
 .projectpic {
-    display: inline;
-    margin-left: 100px;
-    width: 500px;
-    height: 500px;
+display: inline-flex;
+justify-content: center;
+
 }
 
 .gif {
@@ -160,6 +164,9 @@ img {
 
 .about {
     margin-right: 500px;
+    border: 2px solid black;
+    background-color: black;
+    color: azure;
 }
 
 @media only screen and (max-width: 480px) {
@@ -168,3 +175,53 @@ img {
         justify-content: center;
     }
 }
+
+    #myButton {
+        box-shadow:inset 0px 0px 15px 3px #23395e;
+        background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+        background-color:#2e466e;
+        border-radius:17px;
+        border:1px solid #1f2f47;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        padding:6px 13px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #263666;
+    }
+    #myButton:hover {
+        background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+        background-color:#415989;
+    }
+    #myButton:active {
+        position:relative;
+        top:1px;
+    }
+
+
+
+    .originalColor {
+        box-shadow: 3px 4px 0px 0px #899599;
+        background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+        background-color:#030303;
+        border-radius:15px;
+        border:1px solid #2a6cf0;
+        display:inline-block;
+        cursor:pointer;
+        color:#3a8a9e;
+        font-family:Arial;
+        font-size:17px;
+        padding:7px 25px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #bcbcc1;
+    }
+    .originalColor:hover {
+        background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+        background-color:#bab1ba;
+    }
+    .originalColor:active {
+        position:relative;
+        top:1px;
+    }
