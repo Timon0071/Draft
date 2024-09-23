@@ -172,6 +172,8 @@ justify-content: center;
     border: 2px solid black;
     background-color: black;
     color: azure;
+    opacity: 0.5;
+    margin-left: 10px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -229,4 +231,11 @@ justify-content: center;
     .originalColor:active {
         position:relative;
         top:1px;
+    }
+
+    .java{
+        border: 2px solid blue;
+        margin-right: 20px;
+        text-align: left;
+        display: block; margin-right: 500px;
     }
